@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --netflix-red: #E50914;
+    --netflix-bg: #05060A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #05060A;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom sleek dark scrollbar with red thumb */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080A12;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252A3D;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E50914;
+  }
+}
+
+/* Giant outlined numerals for Top 10 row */
+.stroke-numeral {
+  -webkit-text-stroke: 4px rgba(255, 255, 255, 0.45);
+  color: transparent;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  user-select: none;
+}
+.group:hover .stroke-numeral,
+.active-card .stroke-numeral {
+  -webkit-text-stroke: 4px #E50914;
+  text-shadow: 0 0 35px rgba(229, 9, 20, 0.6);
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(11, 13, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-panel-elevated {
+  background: rgba(17, 20, 32, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 9, 20, 0.08);
+}
+
+/* Red cinematic line glow */
+.red-glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #E50914 30%, #FF4444 50%, #E50914 70%, transparent 100%);
+  box-shadow: 0 0 12px #E50914;
+}
+
+/* Custom cursor hide on touch */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
