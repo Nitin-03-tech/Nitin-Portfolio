@@ -85,3 +85,48 @@
     scroll-behavior: auto !important;
   }
 }
+/* Mobile responsive improvements */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    width: 100%;
+    min-width: 0;
+  }
+
+  canvas {
+    touch-action: pan-y;
+  }
+
+  .glass-panel,
+  .glass-panel-elevated {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
