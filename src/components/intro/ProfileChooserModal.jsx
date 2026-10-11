@@ -56,14 +56,8 @@ export default function ProfileChooserModal({ onSelectProfile }) {
           'radial-gradient(circle at 50% 45%, rgba(229, 9, 20, 0.15) 0%, #05060A 70%)',
       }}
     >
-      {/* Top branding */}
-      <div className="absolute top-4 left-4 sm:top-8 sm:left-12 z-20 flex items-center gap-2 sm:gap-3">
-        <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded border border-[#E50914] bg-black/70 shadow-[0_0_15px_#E50914]">
-          <span className="font-bebas text-2xl sm:text-3xl font-black text-[#E50914]">
-            {siteConfig.logoMonogram}
-          </span>
-        </div>
-
+      {/* Top branding — NITIN shown only once */}
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-12 z-20">
         <span className="font-bebas text-xl sm:text-3xl tracking-widest text-white">
           {siteConfig.logoWordmark}
         </span>
